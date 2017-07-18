@@ -1,0 +1,7 @@
+%h4 配送先情報
+%p#notice= notice
+
+= bootstrap_form_for(@delivery_info, url: user_delivery_info_path(@delivery_info), format: :html) do |f|
+   = render :partial => 'form', :locals => {:f => f}
+
+= link_to '戻る', current_user, { class: 'btn btn-default' }

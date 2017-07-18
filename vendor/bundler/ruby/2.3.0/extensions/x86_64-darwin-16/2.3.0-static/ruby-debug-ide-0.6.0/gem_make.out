@@ -1,0 +1,7 @@
+current directory: /Users/k-tanaka/project/market/sakura_market/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.0/ext
+/Users/k-tanaka/.rbenv/versions/2.3.3/bin/ruby mkrf_conf.rb
+Installing base gem
+Building native extensions.  This could take a while...
+
+current directory: /Users/k-tanaka/project/market/sakura_market/vendor/bundler/ruby/2.3.0/gems/ruby-debug-ide-0.6.0/ext
+/Users/k-tanaka/.rbenv/versions/2.3.3/bin/ruby -rubygems /Users/k-tanaka/project/market/sakura_market/vendor/bundler/ruby/2.3.0/gems/rake-12.0.0/exe/rake RUBYARCHDIR=/Users/k-tanaka/project/market/sakura_market/vendor/bundler/ruby/2.3.0/extensions/x86_64-darwin-16/2.3.0-static/ruby-debug-ide-0.6.0 RUBYLIBDIR=/Users/k-tanaka/project/market/sakura_market/vendor/bundler/ruby/2.3.0/extensions/x86_64-darwin-16/2.3.0-static/ruby-debug-ide-0.6.0

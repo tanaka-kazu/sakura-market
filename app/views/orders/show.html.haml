@@ -1,0 +1,16 @@
+%h4 注文詳細
+
+%table.table
+  %thead
+    %tr
+      %th 商品名
+      %th 注文数
+
+  %tbody
+    - @order_items.each do |order_item|
+      %tr
+        %td= order_item.item.name
+        %td= order_item.quantity
+%br
+
+= link_to '戻る', user_orders_path, { class: 'btn btn-default' }

@@ -1,0 +1,13 @@
+- if @delivery_info.errors.any?
+  #error_explanation
+    %h2= "#{pluralize(@delivery_info.errors.count, "error")} prohibited this delivery_info from being saved:"
+    %ul
+      - @delivery_info.errors.full_messages.each do |message|
+        %li= message
+
+.field
+  = f.text_field :name
+.field
+  = f.text_field :address
+.actions
+  = f.submit '保存'

@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b 商品:
+  = @item.name
+%p
+  %img{alt: @item.name, height: "200", src: @item.image, width: "300", class: "img-responsive img_half"}
+%p
+  %b 価格:
+  = number_to_currency @item.price
+%p
+  %b 商品説明:
+  = @item.description
+
+= link_to 'カートに追加', shopping_cart_item_add_path(@item), { class: 'btn btn-default', remote: true }
+= link_to '戻る', root_path, { class: 'btn btn-default' }

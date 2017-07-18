@@ -1,0 +1,59 @@
+%h4 商品注文
+
+%h5 注文一覧
+%table.table
+  %thead
+    %tr
+      %th 商品
+      %th 価格
+      %th 数量
+  %tbody
+    - @shopping_cart.shopping_cart_items.each do |shopping_cart_item|
+      %tr
+        %td= shopping_cart_item.item.name
+        %td= shopping_cart_item.item.price
+        %td= shopping_cart_item.quantity
+%br
+%br
+%b 合計:
+= number_to_currency @shopping_cart.subtotal
+%br
+%b 配送手数料:
+= number_to_currency @shopping_cart.shipping_charge
+%br
+%b 消費税:
+= number_to_currency @shopping_cart.total_taxes
+%br
+%b 総額:
+= number_to_currency @shopping_cart.total_price
+%br
+
+%h5 配送先
+
+- if @delivery_info != nil
+  %table.table
+    %thead
+      %tr
+        %th 配送先名
+        %th 配送先住所
+    %tbody
+      %tr
+        %td
+          = @delivery_info.name
+        %td
+          = @delivery_info.address
+
+  %h5 配送日時
+  = bootstrap_form_for @order, url: user_delivery_info_order_path do |f|
+    = f.select :delivery_date, Order.delivery_dates
+    = f.select :time_range_id, Order.localed_time_ranges, {}, class: 'form-control'
+    = f.hidden_field :delivery_info_id, value: @delivery_info.id
+    = f.hidden_field :settlement_charge, value: @shopping_cart.subtotal
+    = f.hidden_field :delivery_charge, value:@shopping_cart.shipping_charge
+    .actions
+      = f.submit '注文確定'
+
+- else
+  = link_to '配送先情報追加', new_user_delivery_info_path(current_user), { class: 'btn btn-default' }
+
+

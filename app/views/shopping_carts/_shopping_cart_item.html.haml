@@ -1,0 +1,9 @@
+%tr
+  %td
+    = shopping_cart_item.item.name
+  %td
+    = number_to_currency shopping_cart_item.item.price
+  %td
+    = shopping_cart_item.quantity
+  %td
+    = link_to 'カートから削除', shopping_cart_item_remove_path(shopping_cart_item.item), { class: 'btn btn-default', data: { confirm: '商品を削除しますか?' } }

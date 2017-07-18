@@ -1,0 +1,10 @@
+
+.container
+  .row.row-eq-height
+    - @items.each do |item|
+      .col-xs-6.col-md-3
+        .thumbnail
+          = link_to image_tag(item.image, class: "img-responsive"), item, id: "item_img"
+          .caption
+            = link_to item.name, item, id: "item_name"
+            %p= number_to_currency item.price

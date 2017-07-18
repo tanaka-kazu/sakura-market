@@ -1,0 +1,36 @@
+ja:
+  helpers:
+    submit:
+      create: "登録する"
+      update: "更新する"
+      submit: "保存する"
+    label:
+      delivery_info:
+        name: "配送先名"
+        address: "配送先住所"
+      user:
+        nickname: "ニックネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+
+  enums:
+    order:
+      time_range_id:
+        free: '指定なし'
+        am: '8時〜12時'
+        pm1: '12時〜14時'
+        pm2: '14時〜16時'
+        pm3: '16時〜18時'
+        pm4: '18時〜20時'
+        pm5: '20時〜21時'
+
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 円

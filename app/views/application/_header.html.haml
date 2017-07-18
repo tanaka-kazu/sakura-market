@@ -1,0 +1,19 @@
+.container-fluid
+  .row
+    .col-md-3.vbottom
+      %h3 さくらマーケット
+    .col-md-5.vbottom
+      .container-fluid
+        .row
+          .col-md-4.center-block.align-middle= link_to '日記を見る', root_path
+          .col-md-4= link_to 'お買い物', items_path
+          .col-md-4= link_to 'ショッピングカート', shopping_carts_path
+    .col-md-3.vbottom.text-right
+      -if user_signed_in?
+        .container-fluid
+          .row
+            .col-md-6= link_to 'ユーザー情報', current_user, { class: 'btn btn-default' } 
+            .col-md-6= link_to 'ログアウト', destroy_user_session_path, { class: 'btn btn-default' } 
+
+      -else
+        =link_to 'ログイン', user_session_path, { class: 'btn btn-default' } 

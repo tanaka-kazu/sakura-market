@@ -1,0 +1,24 @@
+%h4 注文履歴
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th 注文日
+      %th 配送日
+      %th 配送時間
+      %th 小計
+      %th 配送料
+      %th
+
+  %tbody
+    - @orders.each do |order|
+      %tr
+        %td= order.order_date.strftime("%Y年%m月%d日 %H:%M:%S") 
+        %td= order.delivery_date.strftime("%Y年%m月%d日") 
+        %td= order.time_range_id_i18n
+        %td= number_to_currency order.settlement_charge
+        %td= number_to_currency order.delivery_charge
+        %td= link_to '注文詳細', user_order_path(order), { class: 'btn btn-default' }
+%br
+
+= link_to '戻る', current_user, { class: 'btn btn-default' }

@@ -1,0 +1,6 @@
+%h4 配送先編集
+
+= bootstrap_form_for @delivery_info, url: user_delivery_info_path do |f|
+   = render :partial => 'form', :locals => {:f => f}
+
+= link_to '戻る', current_user, { class: 'btn btn-default' }

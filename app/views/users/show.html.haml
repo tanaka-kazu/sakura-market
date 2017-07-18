@@ -1,0 +1,25 @@
+%h4 ユーザー情報
+%p#notice= notice
+
+= render 'form'
+
+%br
+- if @delivery_info == nil
+  = link_to '配送先情報追加', new_user_delivery_info_path(current_user), { class: 'btn btn-default' }
+- else
+  %h4 配送先情報
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th 配送先宛名
+        %th 配送先住所
+        %th{:width => "50"}
+        %th{:width => "50"}
+
+    %tbody
+      %tr
+        %td= @delivery_info.name
+        %td= @delivery_info.address
+        %td= link_to '編集', edit_user_delivery_info_path(@delivery_info), class: 'btn btn-default'
+
+  = link_to '購入履歴を見る', user_orders_path, { class: 'btn btn-default' }

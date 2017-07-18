@@ -1,0 +1,26 @@
+%h4 ショッピングカート
+
+%p#notice= notice
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th 商品
+      %th 価格
+      %th 数量
+      %th 
+  %tbody
+    = render :partial => 'shopping_cart_item', :collection => @shopping_cart.shopping_cart_items
+
+%b 合計:
+= number_to_currency @shopping_cart.subtotal
+%b 消費税:
+= number_to_currency @shopping_cart.taxes
+%b 総額:
+= number_to_currency @shopping_cart.total
+
+%br
+%br
+- if @shopping_cart.shopping_cart_items.size > 0
+  = link_to '注文する', order_shopping_cart_path, { class: 'btn btn-default' }
+  = link_to 'カートをクリア', @shopping_cart, { class: 'btn btn-default', method: :delete, data: { confirm: '全ての商品を削除しますか?' }}
